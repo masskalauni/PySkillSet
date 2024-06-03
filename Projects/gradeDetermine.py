@@ -13,4 +13,9 @@ elif marks>=40:
     print("Grade is C")
 else:
     print("Grade is F")
+
+
+    student=["Ramesh",50,"Delhi"]
+    print(student)
+    
     
