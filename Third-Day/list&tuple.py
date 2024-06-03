@@ -107,3 +107,29 @@ print(movies)
 tuple=(10,20,30,40,50)
 print(tuple)
 print(tuple[0])
+   #it is same as that of list but the only difference is that we cannot change the value of tuple
+    #tuple[0]=100 #error
+#let take small mind test
+tup=(1,)
+print(tup) #what is the output
+print(type(tup)) #what is data type of tup
+
+
+tup1=(11)
+print(tup1) #what is the output
+print(type(tup1)) #what is data type of tup1
+
+#above  2 examples are very important to understand the concept of tuple in python
+#tup=(1,) is a tuple with one item
+#tup1=(11) is an integer not a tuple
+
+
+#tuple methods
+
+#count()
+#index()
+
+#count()
+numbers=(10,20,30,40,50,20,30,20)
+numbers.count(20) #counts the number of times 20 is present in the tuple
+print(numbers.count(20))
