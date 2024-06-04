@@ -20,6 +20,9 @@ dict={
 print(dict)
 print(type(dict))
 
+dict["name"]="mass kalauni"
+dict["surname"]="kalauni"
+print(dict)
 # Accessing elements from dictionary
 # we can access elements from dictionary using keys
 print(dict['name'])
