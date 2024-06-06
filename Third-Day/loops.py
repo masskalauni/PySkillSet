@@ -72,9 +72,30 @@ else:
 
 
 #range ()
-for i in range(10):
+for i in range(1,10,2): #it will print 1,3,5,7,9 then how it works 1 is start,10 is stop and 2 is the difference or step value
     print(i)
+
+
+#range(start, stop, step)
+
 
  # pass statement
 for i in range(10):
     pass   
+
+# WAP to find the sum of first n numbers. (using while)
+n=int(input("Enter the number:"))
+sum=0
+i=1
+while i<=n:
+    sum+=i
+    i+=1
+print("Sum of first",n,"numbers is",sum)
+
+
+# WAP to find the factorial of first n numbers. (using for)
+n=int(input("Enter the number:"))
+fact=1
+for i in range(1,n+1):
+    fact*=i
+print("Factorial of",n,"is",fact)
