@@ -218,3 +218,240 @@ for file in files:
     lon = f"{lon_match[:-5]}.{lon_match[-5:-3]}{lon_match[-2:]}"
 
     print(f"Latitude: {lat}, Longitude: {lon}")
+
+
+#lab 12
+'''I have a GPA of students as follows:
+
+Can you help sort by the name of the student.
+
+from typing import Dict
+
+gpa = {'Ritu': 2.75,
+       'Neeta': 3.0,
+       'Aarya': 3.5,
+       'Kajal': 3.0,
+       'Shuvam': 3.10,
+       'Bjaya': 3.0
+      }
+
+      Expected Output:
+{'Aarya': 3.5,
+ 'Bjaya': 3.0,
+ ...
+}
+'''
+
+
+from typing import Dict
+
+gpa = {'Ritu': 2.75,
+         'Neeta': 3.0,
+         'Aarya': 3.5,
+         'Kajal': 3.0,
+         'Shuvam': 3.10,
+         'Bjaya': 3.0
+        }
+
+sorted_gpa = dict(sorted(gpa.items(), key=lambda x: x[0]))
+print(list(sorted_gpa))
+
+
+
+#lab 13
+'''
+def picking_numbers(balls: List[int]) -> List[int]:
+  """Can you help me picking even positioned numbers?
+  """
+  # your code here.
+
+# For example
+# print(picking_numbers([1, 2, 3, 4, 5]))  # Output: [1, 3, 5]
+# print(picking_numbers([1, 2, 3, 4, 5, 6]))  # Output: [1, 3, 5]
+# print(picking_numbers([1, 2, 3, 4, 5, 6, 7]))  # Output: [1, 3, 5, 7]
+'''
+def picking_numbers(balls:list[int])->list[int]:
+    return balls[::2]
+print(picking_numbers([1, 2, 3, 4, 5]))  # Output: [1, 3, 5]
+print(picking_numbers([1, 2, 3, 4, 5, 6]))  # Output: [1, 3, 5]
+print(picking_numbers([1, 2, 3, 4, 5, 6, 7]))  # Output: [1, 3, 5, 7]
+
+
+#lab 14
+'''
+def sum_odd(a: int, b: int) -> int:
+    """sum of all odd numbers between (including) a and b
+    """
+    # your code here.
+
+# For example
+# print(sum_odd(2, 4))  # Output: 3
+# print(sum_odd(2, 7))  # Output: 15
+'''
+
+def sum_odd(a:int,b:int)->int:
+    return sum(i for i in range(a,b+1) if i%2!=0)
+print(sum_odd(2, 4))  # Output: 3
+
+
+#lab 15
+'''
+def keep_consonants(word: str) -> str:
+    """word is a string of lowercase letters
+       Returns a string containing only the consonants
+       of word in the order they appear.
+    """
+    # your code here.
+
+# For example
+# print(keep_consonants("abcd"))  # prints bcd
+# print(keep_consonants("aaa"))  # prints an empty string
+# print(keep_consonants("babas"))  # prints bbs'''
+
+def keep_consonants(word : str)->str:
+    return "".join([i for i in word if i not in "aeiou"])
+print(keep_consonants("abcd"))  # prints bcd
+print(keep_consonants("aaa"))  # prints an empty string
+print(keep_consonants("babas"))  # prints bbs
+
+
+#lab 16
+'''
+def remaining_fruits(fruits: List[str], bought: List[str]) -> List[str]:
+    """I have list of fruits to buy, I bought some of them.
+       What are other remaining fruit(s) to buy. Could you help me?
+    """
+    # your code here.
+
+# For example
+# fruits = ['orange', 'apple', 'grapes', 'papaya', 'mango', 'watermelon']
+# bought = ['apple', 'papaya', 'mango']
+# print(remaining_fruits(fruits, bought))  # Output: ['orange', 'grapes', 'watermelon']'''
+
+
+def remaining_fruits(fruits: list[str], bought: list[str]) -> list[str]:
+    return [fruit for fruit in fruits if fruit not in bought]
+
+fruits = ['orange', 'apple', 'grapes', 'papaya', 'mango', 'watermelon']
+
+bought = ['apple', 'papaya', 'mango']
+print(remaining_fruits(fruits, bought))  # Output: ['orange', 'grapes', 'watermelon']
+
+
+#lab 17
+'''
+Create a function called `subtract` that takes two arguments and returns their difference. Call the function with the arguments 10 and 4, and print the result.'''
+
+
+def subtract(a, b):
+    return a - b
+result = subtract(10, 4)
+print(result)  
+
+
+#lab 18
+'''
+Create a generator function called `even_numbers` that yields even numbers starting from 2 up to a given maximum number. Use a for loop to print the even numbers up to 10.'''
+def even_numbers(max):
+    for i in range(2, max+1, 2):
+        yield i
+for even in even_numbers(10):
+    print(even)  # Should print 2, 4, 6, 8, 10
+
+
+#lab 19
+'''
+Write a lambda function(square) that takes a single argument and returns its square. Use this lambda function to find the square of 7 and print the result.'''
+
+
+square = lambda x: x**2
+result = square(7)
+print(result)
+
+
+
+#lab 20
+'''
+Print the current working directory using `os.getcwd()`.'''
+import os
+print(os.getcwd())
+
+
+#lab 21
+'''List all files and directories in the current directory using `os.listdir()`.'''
+import os
+all_files = os.listdir()
+print(all_files)
+
+
+#lab 22
+'''Create a new directory called `test_directory` using `os.mkdir()`.'''
+import os
+os.mkdir("test_directory")
+
+
+#lab 23
+'''Delete the file called `sample_file.txt` using `os.remove()`'''
+import os
+os.remove("sample_file.txt")
+
+
+#lab 24
+'''
+Question 1: Handling File Not Found Error
+
+Write a function load_file_content that takes a file path as input and returns the file content. If the file does not exist, return a user-friendly message.'''
+def load_file_content(file_path):
+    try:
+        with open(file_path, "r") as file:
+            return file.read()
+    except FileNotFoundError:
+        return "File not found"
+
+
+#lab 25
+'''
+Write a function perform_division that takes two numbers as input and returns their division. Handle the case where the denominator is zero.
+
+You can also play around with the exception handling in the next code block as you wish.
+'''
+def perform_division(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Division by zero is not allowed"
+print(perform_division(10, 0))  # Division by zero is not allowed
+
+
+#lab 26
+'''
+Write a function ask_for_integer that prompts the user for an integer input and handles invalid inputs by asking the user to try again.
+
+'''
+
+def ask_for_integer():
+    while True:
+        try:
+            num = int(input("Enter an integer: "))
+            return num
+        except ValueError:
+            print("Invalid input. Please try again.")
+ask_for_integer()
+
+
+#lab 27
+'''
+Question 4: Handling Multiple Exceptions
+
+Modify the function safe_divide to handle both ZeroDivisionError and TypeError. Ensure it provides meaningful error messages for each exception.'''
+
+def safe_divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Division by zero is not allowed"
+    except TypeError:
+        return "Invalid input. Please enter a number"
+print(safe_divide(10, 0))  # Division by zero is not allowed
+
+
