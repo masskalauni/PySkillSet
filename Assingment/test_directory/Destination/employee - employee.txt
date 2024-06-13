@@ -1,0 +1,10 @@
+name	age	income	gender	department	grade	performance_score
+Allen Smith	45.0			Operations	G3	723
+S Kumar		16000.0	F	Finance	G0	520
+Jack Morgan	32.0	35000.0	M	Finance	G2	674
+Ying Chin	45.0	65000.0	F	Sales	G3	556
+Dheeraj Patel	30.0	42000.0	F	Operations	G2	711
+Satyam Sharma		62000.0		Sales	G3	649
+James Authur	54.0		F	Operations	G3	53
+Josh Wills	54.0	52000.0	F	Finance	G3	901
+Leo Duck	23.0	98000.0	M	Sales	G4	709

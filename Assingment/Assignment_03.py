@@ -155,6 +155,8 @@ for txt_file in txt_files:
 
 '''
 
+
+
 ### Task3: Suppose you have a list [0.152264, 6.315308, 12.583487, 18.643744, 24.762218, 30.928, 37.19, 43.169695, 49.266612, 55.565, 61.934, 68.001842, 74.247843, 80.468893, 86.821, 93.052]. Generate 12 equal points in between each item in the list and save them in a .txt file. Make a python program with and without using “linspace” built-in function.
 
 '''
@@ -194,3 +196,35 @@ df.to_csv(os.path.join(destination_dir, 'merged.csv'), index=False)
 
 
 '''
+
+
+import pandas as pd
+
+file_path = "D:\\Projects\\Python\\Python-Series\\Assingment\\test_directory\\Source\\employee - employee.csv"
+# Read the CSV file
+data = pd.read_csv(file_path)
+#convert the csv file into text file
+data.to_csv("D:\\Projects\\Python\\Python-Series\\Assingment\\test_directory\\Destination\\employee - employee.txt", sep="\t", index=False)
+
+'''
+# Print the first few rows of the DataFrame
+print(data.head())
+print(data.shape)
+print(data.dtypes)
+print(data.columns)
+print(data.describe())
+print(data.info())
+print(data.isnull().sum())  
+
+# Print the unique values in the 'Department' column
+print(data['department'].unique())
+
+# Print the number of unique values in the 'Department' column
+
+print(data['department'].nunique())
+
+#isin method
+print(data[data['department'].isin(['Sales', 'Finance'])])
+'''
+
+
